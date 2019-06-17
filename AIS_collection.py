@@ -18,10 +18,11 @@ OUTPUT="csv"
 COMPRESS="2"
 
 url="http://data.aishub.net/ws.php?"+"username="+API_KEY+"&format="+FORMAT+"&output="+OUTPUT+"&compress="+COMPRESS
-r = requests.get(url)
+
 
 def get_ais():
     threading.Timer(60, get_ais).start()
+	r = requests.get(url)
     named_tuple = time.localtime() # get struct_time
     time_string = time.strftime("%d%m%y_%H%M%S", named_tuple)
     print("AIS "+time_string+ "downloaded")
