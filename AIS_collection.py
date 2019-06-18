@@ -21,7 +21,7 @@ url="http://data.aishub.net/ws.php?"+"username="+API_KEY+"&format="+FORMAT+"&out
 
 
 def get_ais():
-    threading.Timer(1600, get_ais).start()
+    threading.Timer(800, get_ais).start()
     r = requests.get(url)
     named_tuple = time.localtime() # get struct_time
     time_string = time.strftime("%d%m%y_%H%M%S", named_tuple)
