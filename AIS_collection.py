@@ -26,7 +26,7 @@ def get_ais():
     named_tuple = time.localtime() # get struct_time
     time_string = time.strftime("%d%m%y_%H%M%S", named_tuple)
     print("AIS "+time_string+ "downloaded")
-    name="ais_"+time_string+".csv.bzip2"
+    name="ais_"+time_string+".csv.bz2"
     open(name, 'wb').write(r.content)
 
 get_ais()
